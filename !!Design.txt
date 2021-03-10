@@ -1,0 +1,75 @@
+  ATTAK_TYPE : enum{PHYSICAL, MAGIC}
+  
+class PokemonBase
+  int lifePoints;
+  int experiencePoints;
+  
+  ATTAK_TYPE attackType;
+  int attackValue;
+  int level;
+  string symbol;
+  string name;
+  int id;
+  
+  bool operator=(Pokemon){
+    return true if same id
+  }
+
+  - levelUp()
+  {
+    //experienceLimit increase
+    level +=1
+    attackValue *= level //to define
+  }
+
+  - int getAttackValue(type){
+    if(attackType == PHYSICAL){
+      return attackValue* (level/ 1.5)
+    }
+  }
+  - damageLift(int points)
+  - gainExperince(int points)
+
+    
+
+  class Game{
+    vector<Player> players;
+    vector<Pokemon> pokemons;
+    attack(attaker, defender){
+      attacker.getAttackValue(type1, type2);
+      
+    }
+    
+  }
+  
+  
+
+
+class Player
+  string name;
+  vector<PokemonBase*> pokemons;
+  int score;
+
+  // return true if player win ?
+  bool attack(Pokemon& defender, Pokemer& attecker){
+    // Pokemon attacker is generated
+    // if the player win: score += attacker.gainExperience
+  
+  };
+
+
+Main{
+  list<Pokmeon> environment //generated, for example #10
+  Player pl1, pl2
+  loop (#rounds){
+    Pokemon fromUser // genereted
+    pl1.setPokemon(fromUser);
+    Pokemon aPokemonfromEnvironment;
+
+    player.attack(fromUser, aPokemonfromEnvironment);
+
+    
+  }
+  
+
+
