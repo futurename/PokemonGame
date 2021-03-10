@@ -1,10 +1,7 @@
-/*
- Created by Wei Wang on 3/10/2021 010.
-*/
 
 #include "Game.h"
 
-#inlclude <iostream>
+#include <iostream>
 
 using namespace std;
 

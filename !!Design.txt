@@ -9,7 +9,7 @@ class PokemonBase
   int level;
   string symbol;
   string name;
-  int id;
+  int id; // generated to be different for each Pokemon
   
   bool operator=(Pokemon){
     return true if same id
@@ -22,22 +22,39 @@ class PokemonBase
     attackValue *= level //to define
   }
 
-  - int getAttackValue(type){
+  + int getAttackValueFor(type){
     if(attackType == PHYSICAL){
       return attackValue* (level/ 1.5)
     }
   }
-  - damageLift(int points)
+  + reduceLifePoints(int points)
   - gainExperince(int points)
+
+  + recover(){
+    // recover from a percentage each round
+  }
+
+  
+
+}
+
+
 
     
 
   class Game{
     vector<Player> players;
     vector<Pokemon> pokemons;
-    attack(attaker, defender){
-      attacker.getAttackValue(type1, type2);
-      
+    
+    loop(){
+      attack(&attaker, &defender){
+        int value = attacker.getAttackValueFor(defender.type);
+        defender.reduceLifePoints(value); // decrease life...
+        attacker.gainExperience(int);
+        
+      }
+
+      // each round we call recover for all the pokemons
     }
     
   }
