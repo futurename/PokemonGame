@@ -11,6 +11,7 @@ int main() {
     }
 
     game.play();
+    game.play();
 
 
     return 0;
