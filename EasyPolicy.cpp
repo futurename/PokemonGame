@@ -9,5 +9,10 @@
 using namespace std;
 
 
+int EasyPolicy::modifyBloodPoints() {
+    return 0;
+}
 
-
+int EasyPolicy::modifyAttackPoints() {
+    return 0;
+}
