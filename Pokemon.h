@@ -1,54 +1,23 @@
+#pragma  once
 
-#ifndef POKEMONGAME_POKEMONBASE_H
-#define POKEMONGAME_POKEMONBASE_H
-
-
-#inlclude <iostream>
+#include <iostream>
 
 using namespace std;
 
 class Pokemon {
+private:
+    string name;
+    int bloodPoints;
+    int attackValue;
+    int experiencePoints;
+    string type;
+    string symbol;
 
-  int lifePoints;
-  int experiencePoints;
-  
-  ATTAK_TYPE attackType;
-  int attackValue;
-  int level;
-  string symbol;
-  string name;
-  int id; // generated to be different for each Pokemon
-  
-  bool operator=(Pokemon){
-    return true if same id
-  }
+public:
+    Pokemon(string& name, int bloodPoints, int attackValue, string& type, string& symbol);
 
-  - levelUp()
-  {
-    //experienceLimit increase
-    level +=1
-    attackValue *= level //to define
-  }
-
-  + int getAttackValueFor(type){
-    if(attackType == PHYSICAL){
-      return attackValue* (level/ 1.5)
-    }
-  }
-  + reduceLifePoints(int points)
-  - gainExperince(int points)
-
-  + recover(){
-    // recover from a percentage each round
-  }
-
-  
-
-
-
-
-
+    void printPokemon() const;
 };
 
 
-#endif //POKEMONGAME_POKEMONBASE_H
+

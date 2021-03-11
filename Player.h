@@ -1,15 +1,15 @@
+#pragma once
 
-#ifndef POKEMONGAME_PLAYER_H
-#define POKEMONGAME_PLAYER_H
-
-
-#inlclude <iostream>
+#include <iostream>
 
 using namespace std;
 
 class Player {
+private:
+    string name;
 
+public:
+    Player(string name);
+    string getName() const;
 };
 
-
-#endif //POKEMONGAME_PLAYER_H

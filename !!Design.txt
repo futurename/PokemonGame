@@ -1,7 +1,7 @@
   ATTAK_TYPE : enum{PHYSICAL, MAGIC}
   
 class PokemonBase
-  int lifePoints;
+  int bloodPoints;
   int experiencePoints;
   
   ATTAK_TYPE attackType;
@@ -33,18 +33,13 @@ class PokemonBase
   + recover(){
     // recover from a percentage each round
   }
-
-  
-
 }
-
-
-
     
 
   class Game{
     vector<Player> players;
-    vector<Pokemon> pokemons;
+    map<name, Pokemon> pokemonTypes;
+    vector<Pokemon> activePokenmons;
     
     loop(){
       attack(&attaker, &defender){
@@ -59,12 +54,11 @@ class PokemonBase
     
   }
   
-  
 
 
 class Player
   string name;
-  vector<PokemonBase*> pokemons;
+  vector<Pokemon> pokemons;
   int score;
 
   // return true if player win ?

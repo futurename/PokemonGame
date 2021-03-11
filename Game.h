@@ -1,16 +1,27 @@
+#pragma once
 
+#include <vector>
+#include <iostream>
+#include <map>
 
-#ifndef POKEMONGAME_GAME_H
-#define POKEMONGAME_GAME_H
-
-
-#inlclude <iostream>
+#include "Player.h"
+#include "Pokemon.h"
 
 using namespace std;
 
+static const string FILE_NAME = "../pokemons.txt";
+
 class Game {
+private:
+    vector<Player> players;
+    map<string, Pokemon> pokenmonModels;
+    vector<Pokemon> activePokenmons;
+    void readPokenmonsFromFile(string filename = FILE_NAME);
+
+public:
+    Game(int numOfPlayers);
+    ~Game();
+    vector<Player> getPlayers() ;
+    map<string, Pokemon> getPokenmonType();
 
 };
-
-
-#endif //POKEMONGAME_GAME_H
