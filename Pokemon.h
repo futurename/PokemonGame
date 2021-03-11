@@ -1,22 +1,43 @@
 #pragma  once
 
 #include <iostream>
+#include "Type.h"
 
 using namespace std;
 
 class Pokemon {
 private:
     string name;
-    int bloodPoints;
+    int bloodPoints; // same as HP
     int attackValue;
     int experiencePoints;
-    string type;
+    Type type;
     string symbol;
+    int id;
 
 public:
-    Pokemon(string& name, int bloodPoints, int attackValue, string& type, string& symbol);
+    static int count; // increment with each pokemon created, used to create a unique ID.
+
+    Pokemon(string& name, int bloodPoints, int attackValue, Type& type, string& symbol);
 
     void printPokemon() const;
+
+    // getter
+
+
+
+
+
+    // setter
+
+
+
+
+
+
+
+
+
 };
 
 

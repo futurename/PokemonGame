@@ -7,13 +7,15 @@
 using namespace std;
 
 
-Pokemon::Pokemon(string &name, int bloodPoints, int attackValue, string &type, string &symbol) {
+Pokemon::Pokemon(string &name, int bloodPoints, int attackValue, Type &type, string &symbol) {
     this->name = name;
     this->bloodPoints = bloodPoints;
     this->attackValue = attackValue;
     this->type = type;
     this->symbol = symbol;
     this->experiencePoints = 0;
+    id = count;
+    count += 1;
 }
 
 void Pokemon::printPokemon() const {
@@ -35,4 +37,6 @@ void Pokemon::printPokemon() const {
 
     cout << symbol << endl;
 }
+
+
 

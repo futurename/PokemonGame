@@ -2,6 +2,10 @@
 #include <iostream>
 
 #include "Game.h"
+#include "Pokemon.h"
+
+int Pokemon::count = 0;
+
 
 int main() {
     Game game;
