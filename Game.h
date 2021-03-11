@@ -16,12 +16,15 @@ private:
     vector<Player> players;
     map<string, Pokemon> pokenmonModels;
     vector<Pokemon> activePokenmons;
-    void readPokenmonsFromFile(string filename = FILE_NAME);
+    void readPokenmonModelsFromFile(string filename = FILE_NAME);
 
 public:
-    Game(int numOfPlayers);
+    Game();
     ~Game();
     vector<Player> getPlayers() ;
     map<string, Pokemon> getPokenmonType();
+    void initPlayer(int numOfPlayers);
+    void play(int roundLimit = 0);
 
+    static int getValidInputNumber();
 };

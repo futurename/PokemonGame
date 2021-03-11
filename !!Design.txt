@@ -36,24 +36,19 @@ class PokemonBase
 }
     
 
-  class Game{
+  class Game:
     vector<Player> players;
     map<name, Pokemon> pokemonTypes;
     vector<Pokemon> activePokenmons;
-    
-    loop(){
-      attack(&attaker, &defender){
-        int value = attacker.getAttackValueFor(defender.type);
-        defender.reduceLifePoints(value); // decrease life...
-        attacker.gainExperience(int);
-        
-      }
 
-      // each round we call recover for all the pokemons
-    }
     
-  }
-  
+  class Event:
+    int round;
+    int pokemonId;
+    int bloodPoints;
+    int attackPoints;
+    int experiencePoints;
+
 
 
 class Player
