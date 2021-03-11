@@ -118,17 +118,17 @@ void Game::playByPlayer(Player &player) {
 
     while (true) {
         int input = getValidInputNumber();
-        if(input != 1 || input != 2){
-            cout << "Please select 1 for attacking a pokemon or 2 for attacking a player: " << endl;
-        }else{
+        if (input == 1 || input == 2) {
             break;
+        } else {
+            cout << "Please select 1 for attacking a pokemon or 2 for attacking a player: " << endl;
         }
     }
 
 }
 
 void Game::initActivePokemons() {
-    cout << "***** Initializing active pokemon size : " << INIT_ACTIVE_POKEMONS << " *****" << endl;
+    cout << ">>>>> Initializing active pokemon size : " << INIT_ACTIVE_POKEMONS << " <<<<<" << endl << endl;
     activePokenmons = createPokenmonVector(INIT_ACTIVE_POKEMONS);
 }
 
