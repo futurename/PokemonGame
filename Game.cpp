@@ -38,6 +38,10 @@ void Game::readPokenmonModelsFromFile(string &filename) {
     }
 }
 
+Game::Game() {
+    readPokenmonModelsFromFile();
+}
+
 vector<Player> Game::getPlayers() {
     return players;
 }
