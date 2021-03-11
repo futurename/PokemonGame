@@ -9,7 +9,7 @@ using namespace std;
 
 const string Game::FILE_NAME = "../pokemons.txt";
 
-void Game::readPokenmonModelsFromFile(string& filename) {
+void Game::readPokenmonModelsFromFile(string &filename) {
     ifstream inFile(filename);
     if (inFile.is_open()) {
         string line;
@@ -29,7 +29,7 @@ void Game::readPokenmonModelsFromFile(string& filename) {
                 Type type = getTypeFromNumber(stoi(typeStr));
 
                 Pokemon pokemon(name, lifePoints, attackValue, type, symbol);
-                pokenmonModels.insert({pokemon.getId(), pokemon});
+                pokenmonModels.push_back(pokemon);
             }
         }
         inFile.close();
@@ -46,7 +46,7 @@ vector<Player> Game::getPlayers() {
     return players;
 }
 
-map<int, Pokemon> Game::getPokenmonType() {
+vector<Pokemon> Game::getPokenmonType() {
     return pokenmonModels;
 }
 
@@ -64,7 +64,7 @@ void Game::play(int roundLimit) {
 
     while (roundLimit-- > 0) {
         cout << setfill('*') << setw(roundTitleWidth) << " Round : "
-             << to_string(roundIndex) << " " << setw(roundTitleWidth) << "" << endl;
+             << to_string(roundIndex++) << " " << setw(roundTitleWidth) << "" << endl;
 
         for (int i = 0; i < players.size(); i++) {
             cout << "player sequence: " + to_string(i + 1) << endl;
@@ -107,12 +107,15 @@ void Game::playByPlayer(Player &player) {
 }
 
 void Game::initActivePokemons() {
-    for(int i = 0; i < INIT_ACTIVE_POKEMONS; i++){
+    for (int i = 0; i < INIT_ACTIVE_POKEMONS; i++) {
         int ranIndex = getRandomNum(0, INIT_ACTIVE_POKEMONS);
+        Pokemon onePokenmon(pokenmonModels.at(ranIndex));
+        activePokenmons.push_back(onePokenmon);
+    }
 
-        cout << "random num: " << ranIndex << endl;
-
-
+    cout << "****************" << endl;
+    for(Pokemon p: activePokenmons){
+        p.printPokemon();
     }
 }
 

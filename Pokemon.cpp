@@ -7,15 +7,14 @@
 using namespace std;
 
 
-Pokemon::Pokemon(string &name, int bloodPoints, int attackValue, Type &type, string &symbol) {
+Pokemon::Pokemon(string &name, int bloodPoints, int attackValue, Type &type, string &symbol, int id) {
     this->name = name;
     this->bloodPoints = bloodPoints;
     this->attackValue = attackValue;
     this->type = type;
     this->symbol = symbol;
     this->experiencePoints = 0;
-    id = count;
-    count += 1;
+    this->id = id;
 }
 
 void Pokemon::printPokemon() const {
@@ -37,49 +36,75 @@ void Pokemon::printPokemon() const {
 
     cout << symbol << endl;
 }
+
 ///////////////getters
-string Pokemon::getName(){
+string Pokemon::getName() const {
     return name;
 }
-int Pokemon::getBloodPoints(){
+
+int Pokemon::getBloodPoints() {
     return bloodPoints;
 }
-int Pokemon::getAttackValue(){
+
+int Pokemon::getAttackValue() {
     return attackValue;
 }
-int Pokemon::getExperiencePoints(){
+
+int Pokemon::getExperiencePoints() {
     return experiencePoints;
 }
-Type Pokemon::getType(){
+
+Type Pokemon::getType() {
     return type;
 }
-string Pokemon::getSymbol(){
+
+string Pokemon::getSymbol() {
     return symbol;
 }
-int Pokemon::getId(){
+
+int Pokemon::getId() {
     return id;
 }
+
 /////////////setters
-void Pokemon::setName(string pname){
-     name = pname;
+void Pokemon::setName(string pname) {
+    name = pname;
 }
-void Pokemon::setBloodPoints(int points){
+
+void Pokemon::setBloodPoints(int points) {
     bloodPoints = points;
 }
-void Pokemon::setAttackValue(int aValue){
+
+void Pokemon::setAttackValue(int aValue) {
     attackValue = aValue;
 }
-void Pokemon::setExperiencePoints(int exPoints){
+
+void Pokemon::setExperiencePoints(int exPoints) {
     experiencePoints = exPoints;
 }
-void Pokemon::setType(Type ptype){
+
+void Pokemon::setType(Type ptype) {
     type = ptype;
 }
-void Pokemon::setSymbol(string pSymbol){
+
+void Pokemon::setSymbol(string pSymbol) {
     symbol = pSymbol;
 }
-void Pokemon::setId(int pid){
+
+void Pokemon::setId(int pid) {
     id = pid;
 }
+
+//copy constructor
+Pokemon::Pokemon(Pokemon const &pokemon) {
+   this->name = pokemon.name;
+   this->bloodPoints = pokemon.bloodPoints;
+   this->attackValue = pokemon.attackValue;
+   this->type = pokemon.type;
+   this->symbol = pokemon.symbol;
+   this->id = ++count;
+}
+
+Pokemon::Pokemon() {}
 
 

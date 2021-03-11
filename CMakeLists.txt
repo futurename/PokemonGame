@@ -3,7 +3,7 @@ project(PokemonGame)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PokemonGame main.cpp Player.h Player.cpp Pokemon.cpp Pokemon.h Game.cpp Game.h Policy.h EasyPolicy.h EasyPolicy.cpp)
+add_executable(PokemonGame main.cpp Player.h Player.cpp Pokemon.cpp Pokemon.h Game.cpp Game.h Policy.h EasyPolicy.h EasyPolicy.cpp Move.cpp Move.h Type.h)
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)

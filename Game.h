@@ -13,7 +13,7 @@ using namespace std;
 class Game {
 private:
     vector<Player> players;
-    map<int, Pokemon> pokenmonModels;
+    vector<Pokemon> pokenmonModels;
     vector<Pokemon> activePokenmons;
     void readPokenmonModelsFromFile(string& filename = const_cast<string &>(FILE_NAME));
     static const string FILE_NAME;
@@ -24,7 +24,7 @@ public:
     Game();
     ~Game();
     vector<Player> getPlayers() ;
-    map<int, Pokemon> getPokenmonType();
+    vector<Pokemon> getPokenmonType();
     void initPlayer(int numOfPlayers);
     void play(int roundLimit = INT_MAX);
 
