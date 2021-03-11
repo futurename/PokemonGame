@@ -12,6 +12,10 @@ int main() {
     srand(time(nullptr));
     Game game;
 
+    for(Pokemon& p : game.getPokenmonType()){
+        p.printPokemon();
+    }
+
     game.play();
 
 

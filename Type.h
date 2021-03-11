@@ -21,3 +21,17 @@ static Type getTypeFromNumber(int typeNum) {
             break;
     }
 }
+
+static string getTypeString(Type type) {
+    switch (type) {
+        case GRASS:
+            return "GRASS";
+        case POISON:
+            return "POISON";
+        case ROCK:
+            return "ROCK";
+        default:
+            cout << "No such type: " + to_string(type) << endl;
+            break;
+    }
+}

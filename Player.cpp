@@ -11,12 +11,7 @@ Player::Player(string name) : name(name) {}
 string Player::getName() const {
     return name;
 }
-int Player::getPlayerScore(){
-    return playerScore;
-}
-void Player::setPlayerScore(int score){
-    playerScore = score;
-}
+
 vector<Pokemon> Player::getPokemons(){
     return playerPokemons;
 }

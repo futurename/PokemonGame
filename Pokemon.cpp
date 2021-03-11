@@ -32,7 +32,7 @@ void Pokemon::printPokemon() const {
     cout << setw(nameWidth) << name << delimitor
          << setw(numberWidth + 2) << bloodPoints << setw(numberWidth - 1) << "" << delimitor
          << setw(numberWidth + 2) << attackValue << setw(numberWidth - 1) << "" << delimitor
-         << setw(typeWidth) << type << endl;
+         << setw(typeWidth) << getTypeString(type) << endl;
 
     cout << symbol << endl;
 }
