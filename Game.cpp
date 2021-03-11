@@ -58,6 +58,10 @@ void Game::play(int roundLimit) {
 
     cout << "How many players: " << endl;
     int numOfPlayers = getValidInputNumber();
+    if (numOfPlayers <= 1) {
+        cout << "Minimum 2 players" << endl;
+        numOfPlayers = DEFAULT_PLAYER_NUM;
+    }
 
     initPlayer(numOfPlayers);
     initActivePokemons();
@@ -77,7 +81,14 @@ void Game::initPlayer(int numOfPlayers) {
     for (int i = 1; i <= numOfPlayers; i++) {
         string name = "Player_" + to_string(i);
         Player player(name);
+        player.setPokenmons(createPokenmonVector(INIT_PLAYER_POKEMONS));
         players.push_back(player);
+    }
+    for (Player p: players) {
+        cout << p.getName() << endl;
+        for (Pokemon pm: p.getPokemons()) {
+            pm.printPokemon();
+        }
     }
 }
 
@@ -103,22 +114,34 @@ int Game::getValidInputNumber() {
 }
 
 void Game::playByPlayer(Player &player) {
+    cout << "Attack a pokemon <1> or other players <2> (1 or 2)" << endl;
+
+    while (true) {
+        int input = getValidInputNumber();
+        if(input != 1 || input != 2){
+            cout << "Please select 1 for attacking a pokemon or 2 for attacking a player: " << endl;
+        }else{
+            break;
+        }
+    }
 
 }
 
 void Game::initActivePokemons() {
-    for (int i = 0; i < INIT_ACTIVE_POKEMONS; i++) {
-        int ranIndex = getRandomNum(0, INIT_ACTIVE_POKEMONS);
-        Pokemon onePokenmon(pokenmonModels.at(ranIndex));
-        activePokenmons.push_back(onePokenmon);
-    }
-
-    cout << "****************" << endl;
-    for(Pokemon p: activePokenmons){
-        p.printPokemon();
-    }
+    cout << "***** Initializing active pokemon size : " << INIT_ACTIVE_POKEMONS << " *****" << endl;
+    activePokenmons = createPokenmonVector(INIT_ACTIVE_POKEMONS);
 }
 
 int Game::getRandomNum(int low, int high) {
     return rand() % (high - low) + low;
+}
+
+vector<Pokemon> Game::createPokenmonVector(const int num) {
+    vector<Pokemon> result;
+    for (int i = 0; i < num; i++) {
+        int ranIndex = getRandomNum(0, pokenmonModels.size());
+        Pokemon onePokenmon(pokenmonModels.at(ranIndex));
+        result.push_back(onePokenmon);
+    }
+    return result;
 }

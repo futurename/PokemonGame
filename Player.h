@@ -24,5 +24,7 @@ public:
     bool removePokemon(Pokemon pokemon);
 
     void recoverBloodPoints(double ratio);
+
+    void setPokenmons(vector<Pokemon> pokemons);
 };
 

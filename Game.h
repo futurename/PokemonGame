@@ -15,17 +15,26 @@ private:
     vector<Player> players;
     vector<Pokemon> pokenmonModels;
     vector<Pokemon> activePokenmons;
-    void readPokenmonModelsFromFile(string& filename = const_cast<string &>(FILE_NAME));
     static const string FILE_NAME;
     static const int INIT_ACTIVE_POKEMONS = 3;
     static const int INIT_PLAYER_POKEMONS = 2;
+    static const int DEFAULT_PLAYER_NUM = 2;
+
+    void readPokenmonModelsFromFile(string &filename = const_cast<string &>(FILE_NAME));
+
+    vector<Pokemon> createPokenmonVector(const int pokemons);
 
 public:
     Game();
+
     ~Game();
-    vector<Player> getPlayers() ;
+
+    vector<Player> getPlayers();
+
     vector<Pokemon> getPokenmonType();
-    void initPlayer(int numOfPlayers);
+
+    void initPlayer(int numOfPlayers = DEFAULT_PLAYER_NUM);
+
     void play(int roundLimit = INT_MAX);
 
     static int getValidInputNumber();
@@ -34,5 +43,7 @@ public:
 
     void initActivePokemons();
 
-    int getRandomNum(int i, const int pokemons);
+    int getRandomNum(int i, int pokemons);
+
+
 };

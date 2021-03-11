@@ -33,3 +33,7 @@ void Player::recoverBloodPoints(double ratio) {
         playerPokemons.at(i).setBloodPoints( blood +ratio);
     }
 }
+
+void Player::setPokenmons(vector<Pokemon> pokemons) {
+    playerPokemons = pokemons;
+}
