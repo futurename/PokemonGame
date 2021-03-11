@@ -37,7 +37,7 @@ public:
     void setExperiencePoints(int exPoints);
     void setType(Type ptype);
     void setSymbol(string pSymbol);
-    vois setId(int pid);
+    void setId(int pid);
 
 
 

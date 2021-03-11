@@ -67,7 +67,7 @@ void Pokemon::setBloodPoints(int points){
     bloodPoints = points;
 }
 void Pokemon::setAttackValue(int aValue){
-    attackValue = value;
+    attackValue = aValue;
 }
 void Pokemon::setExperiencePoints(int exPoints){
     experiencePoints = exPoints;
