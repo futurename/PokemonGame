@@ -7,24 +7,29 @@
 
 using namespace std;
 
-void Game::readPokenmonModelsFromFile(string filename) {
+const string Game::FILE_NAME = "../pokemons.txt";
+
+void Game::readPokenmonModelsFromFile(string& filename) {
     ifstream inFile(filename);
     if (inFile.is_open()) {
         string line;
         while (getline(inFile, line)) {
             if (!inFile.bad()) {
-                string name, type;
+                string name, typeStr;
                 int lifePoints, attackValue;
                 stringstream ss(line);
-                if (!(ss >> name >> lifePoints >> attackValue >> type)) {
+                if (!(ss >> name >> lifePoints >> attackValue >> typeStr)) {
                     cout << "Reading pokemon info error: " + ss.str();
                 }
                 string symbol;
                 while (getline(inFile, line) && !line.empty()) {
                     symbol += line + "\n";
                 }
+
+                Type type = getTypeFromNumber(stoi(typeStr));
+
                 Pokemon pokemon(name, lifePoints, attackValue, type, symbol);
-                pokenmonModels.insert({name, pokemon});
+                pokenmonModels.insert({pokemon.getId(), pokemon});
             }
         }
         inFile.close();
@@ -41,7 +46,7 @@ vector<Player> Game::getPlayers() {
     return players;
 }
 
-map<string, Pokemon> Game::getPokenmonType() {
+map<int, Pokemon> Game::getPokenmonType() {
     return pokenmonModels;
 }
 
@@ -55,6 +60,7 @@ void Game::play(int roundLimit) {
     int numOfPlayers = getValidInputNumber();
 
     initPlayer(numOfPlayers);
+    initActivePokemons();
 
     while (roundLimit-- > 0) {
         cout << setfill('*') << setw(roundTitleWidth) << " Round : "
@@ -62,6 +68,7 @@ void Game::play(int roundLimit) {
 
         for (int i = 0; i < players.size(); i++) {
             cout << "player sequence: " + to_string(i + 1) << endl;
+            playByPlayer(players.at(i));
         }
     }
 }
@@ -93,4 +100,22 @@ int Game::getValidInputNumber() {
         }
     }
     return result;
+}
+
+void Game::playByPlayer(Player &player) {
+
+}
+
+void Game::initActivePokemons() {
+    for(int i = 0; i < INIT_ACTIVE_POKEMONS; i++){
+        int ranIndex = getRandomNum(0, INIT_ACTIVE_POKEMONS);
+
+        cout << "random num: " << ranIndex << endl;
+
+
+    }
+}
+
+int Game::getRandomNum(int low, int high) {
+    return rand() % (high - low) + low;
 }

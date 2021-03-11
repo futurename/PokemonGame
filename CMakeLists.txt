@@ -34,28 +34,7 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 
 target_link_libraries(PokemonGame gtest_main)
 add_test(NAME example_test COMMAND example)
-=======
-project( pokemonGame )
-set(SRCS
-	Game.cpp
-	Move.cpp
-	Player.cpp
-	Pokemon.cpp
-  )
-    
-set(HEADERS
-    Category.h
-	Game.h
-	Move.h
-	Player.h
-	Pokemon.h
-  	Type.h
-  )
-    
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
 
 # Ask cmake to compile our project into an executable named stockMarket
 add_executable( pokemonGame main.cpp ${SRCS} ${HEADERS} )
->>>>>>> Stashed changes

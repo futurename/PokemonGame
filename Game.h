@@ -6,25 +6,33 @@
 
 #include "Player.h"
 #include "Pokemon.h"
+#include "Type.h"
 
 using namespace std;
-
-static const string FILE_NAME = "../pokemons.txt";
 
 class Game {
 private:
     vector<Player> players;
-    map<string, Pokemon> pokenmonModels;
+    map<int, Pokemon> pokenmonModels;
     vector<Pokemon> activePokenmons;
-    void readPokenmonModelsFromFile(string filename = FILE_NAME);
+    void readPokenmonModelsFromFile(string& filename = const_cast<string &>(FILE_NAME));
+    static const string FILE_NAME;
+    static const int INIT_ACTIVE_POKEMONS = 3;
+    static const int INIT_PLAYER_POKEMONS = 2;
 
 public:
     Game();
     ~Game();
     vector<Player> getPlayers() ;
-    map<string, Pokemon> getPokenmonType();
+    map<int, Pokemon> getPokenmonType();
     void initPlayer(int numOfPlayers);
     void play(int roundLimit = INT_MAX);
 
     static int getValidInputNumber();
+
+    void playByPlayer(Player &player);
+
+    void initActivePokemons();
+
+    int getRandomNum(int i, const int pokemons);
 };
