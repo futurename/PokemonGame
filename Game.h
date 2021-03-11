@@ -22,7 +22,7 @@ private:
 
     void readPokenmonModelsFromFile(string &filename = const_cast<string &>(FILE_NAME));
 
-    vector<Pokemon> createPokenmonVector(const int pokemons);
+    vector<Pokemon> createPokenmonVector(int pokemons);
 
 public:
     Game();
@@ -39,7 +39,7 @@ public:
 
     static int getValidInputNumber();
 
-    void playByPlayer(Player &player);
+    static void playByPlayer(Player &player);
 
     void initActivePokemons();
 
