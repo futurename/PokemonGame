@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -48,14 +48,20 @@ map<string, Pokemon> Game::getPokenmonType() {
 Game::~Game() = default;
 
 void Game::play(int roundLimit) {
+    static int roundIndex = 1;
+    const int roundTitleWidth = 15;
+
     cout << "How many players: " << endl;
     int numOfPlayers = getValidInputNumber();
 
     initPlayer(numOfPlayers);
 
-    while(roundLimit-- > 0){
-        for(int i = 0; i < players.size(); i++){
-            cout << "player sequence: " + to_string(i+1) << endl;
+    while (roundLimit-- > 0) {
+        cout << setfill('*') << setw(roundTitleWidth) << " Round : "
+             << to_string(roundIndex) << " " << setw(roundTitleWidth) << "" << endl;
+
+        for (int i = 0; i < players.size(); i++) {
+            cout << "player sequence: " + to_string(i + 1) << endl;
         }
     }
 }
@@ -71,17 +77,17 @@ void Game::initPlayer(int numOfPlayers) {
 int Game::getValidInputNumber() {
     int result;
     string input;
-    while(true){
+    while (true) {
         bool success = true;
         getline(cin, input);
-        for(char c: input){
-            if(!isdigit(c)){
+        for (char c: input) {
+            if (!isdigit(c)) {
                 cout << "Not a number, try again: " << endl;
                 success = false;
                 break;
             }
         }
-        if(success) {
+        if (success) {
             result = stoi(input);
             break;
         }

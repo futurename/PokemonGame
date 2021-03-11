@@ -24,7 +24,7 @@ public:
     vector<Player> getPlayers() ;
     map<string, Pokemon> getPokenmonType();
     void initPlayer(int numOfPlayers);
-    void play(int roundLimit = 0);
+    void play(int roundLimit = INT_MAX);
 
     static int getValidInputNumber();
 };
