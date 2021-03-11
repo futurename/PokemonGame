@@ -13,7 +13,7 @@ Scorbunny 100 40 PHYSICAL
           (_,-'`> .'
                (_,'
 
-Pikachu 110 35 MEGIC
+Pikachu 110 35 MAGIC
           \:.             .:/
            \``._________.''/
             \             /
@@ -28,7 +28,7 @@ Pikachu 110 35 MEGIC
               :-._____.-:
              `''       `''
 
-Bulbasaur 120 32 MEGIC
+Bulbasaur 120 32 MAGIC
               ..:;:;::;:
         ..--''' '' ' ' '''--.
       /' .   .'        '.   .`\
@@ -59,7 +59,7 @@ Kangaskhan 100 38 PHYSICAL
              .'__/-' ````.-'.'        '-._'_
              ```        ````              `"`
 
-Lycanroc 110 25 MEGIC
+Lycanroc 110 25 MAGIC
                    ,     ,
                         |\---/|
                        /  , , |
