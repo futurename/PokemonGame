@@ -39,7 +39,7 @@ public:
 
     static int getValidInputNumber();
 
-    static void playByPlayer(Player &player);
+    void playByPlayer(Player &player);
 
     void initActivePokemons();
 

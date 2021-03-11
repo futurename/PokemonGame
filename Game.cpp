@@ -70,6 +70,8 @@ void Game::play(int roundLimit) {
         cout << setfill('*') << setw(roundTitleWidth) << " Round : "
              << to_string(roundIndex++) << " " << setw(roundTitleWidth) << "" << endl;
 
+        cout << setfill(' ');
+
         for (int i = 0; i < players.size(); i++) {
             cout << "player sequence: " + to_string(i + 1) << endl;
             playByPlayer(players.at(i));
@@ -115,14 +117,33 @@ int Game::getValidInputNumber() {
 
 void Game::playByPlayer(Player &player) {
     cout << "Attack a pokemon <1> or other players <2> (1 or 2)" << endl;
-
+    int input;
     while (true) {
-        int input = getValidInputNumber();
+        input = getValidInputNumber();
         if (input == 1 || input == 2) {
             break;
         } else {
             cout << "Please select 1 for attacking a pokemon or 2 for attacking a player: " << endl;
         }
+    }
+    if(input == 1){
+        int randomIndex = getRandomNum(0, activePokenmons.size());
+        Pokemon defender = activePokenmons.at(randomIndex);
+        cout << endl << "DEFENDER: " << endl;
+        defender.printPokemon();
+
+        cout << endl;
+        cout << "which pokemon will you choose for this combat? " << endl;
+        for(int i = 0; i < player.getPokemons().size();i++){
+            cout << "ID: <" << i << ">" << endl;
+            player.getPokemons().at(i).printPokemon();
+        }
+
+        input = getValidInputNumber();
+        Pokemon attacker = player.getPokemons().at(input);
+
+        cout << "ATTACKER: "<< endl;
+        attacker.printPokemon();
     }
 
 }
