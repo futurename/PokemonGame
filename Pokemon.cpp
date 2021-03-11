@@ -37,6 +37,49 @@ void Pokemon::printPokemon() const {
 
     cout << symbol << endl;
 }
-
+///////////////getters
+string Pokemon::getName(){
+    return name;
+}
+int Pokemon::getBloodPoints(){
+    return bloodPoints;
+}
+int Pokemon::getAttackValue(){
+    return attackValue;
+}
+int Pokemon::getExperiencePoints(){
+    return experiencePoints;
+}
+Type Pokemon::getType(){
+    return type;
+}
+string Pokemon::getSymbol(){
+    return symbol;
+}
+int Pokemon::getId(){
+    return id;
+}
+/////////////setters
+void Pokemon::setName(string pname){
+     name = pname;
+}
+void Pokemon::setBloodPoints(int points){
+    bloodPoints = points;
+}
+void Pokemon::setAttackValue(int aValue){
+    attackValue = value;
+}
+void Pokemon::setExperiencePoints(int exPoints){
+    experiencePoints = exPoints;
+}
+void Pokemon::setType(Type ptype){
+    type = ptype;
+}
+void Pokemon::setSymbol(string pSymbol){
+    symbol = pSymbol;
+}
+void Pokemon::setId(int pid){
+    id = pid;
+}
 
 

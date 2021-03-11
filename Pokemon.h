@@ -23,13 +23,21 @@ public:
     void printPokemon() const;
 
     // getter
-
-
-
-
-
+    string getName();
+    int getBloodPoints();
+    int getAttackValue();
+    int getExperiencePoints();
+    Type getType();
+    string getSymbol();
+    int getId();
     // setter
-
+    void setName(string pname);
+    void setBloodPoints(int point);
+    void setAttackValue(int aValue);
+    void setExperiencePoints(int exPoints);
+    void setType(Type ptype);
+    void setSymbol(string pSymbol);
+    vois setId(int pid);
 
 
 
