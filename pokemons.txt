@@ -84,7 +84,7 @@ Woobat 130 25 PHYSICAL
                \ ((  )) /
                 '.    .'
                   `\/`
-                   --
+                  ^  ^
 
 Spinarak 100 39 PHYSICAL
                  )
