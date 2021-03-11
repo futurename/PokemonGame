@@ -29,7 +29,6 @@ Pikachu 110 35 MAGIC
              `''       `''
 
 Bulbasaur 120 32 MAGIC
-              ..:;:;::;:
         ..--''' '' ' ' '''--.
       /' .   .'        '.   .`\
      | /    /            \   '.|
@@ -60,7 +59,6 @@ Kangaskhan 100 38 PHYSICAL
              ```        ````              `"`
 
 Lycanroc 110 25 MAGIC
-                   ,     ,
                         |\---/|
                        /  , , |
                   __.-'|  / \ /
@@ -86,9 +84,9 @@ Woobat 130 25 PHYSICAL
                \ ((  )) /
                 '.    .'
                   `\/`
+                   --
 
 Spinarak 100 39 PHYSICAL
-                (
                  )
                 (
           /\  .-"""-.  /\
