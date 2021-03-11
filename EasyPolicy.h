@@ -5,6 +5,9 @@
 using namespace std;
 
 class EasyPolicy : public Policy{
+public:
+    int modifyBloodPoints() override;
 
+    int modifyAttackPoints() override;
 };
 
