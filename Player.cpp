@@ -19,7 +19,7 @@ void Player::addPokenmon(Pokemon pokemon){
 }
 bool Player::removePokemon(Pokemon pokemon){
     for(auto it = playerPokemons.begin(); it != playerPokemons.end(); it++){
-        if( playerPokemons.at(it).getId() == pokemon.getId() ) {
+        if( it->getId() == pokemon.getId() ) {
             playerPokemons.erase(it);
             return true;
         }
